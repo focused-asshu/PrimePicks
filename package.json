@@ -1,0 +1,16 @@
+{
+  "name": "primepicks",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"pnpm --filter server dev\" \"pnpm --filter client dev\"",
+    "build": "pnpm -r build",
+    "start": "pnpm --filter server start",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "eslint": "^9.9.0",
+    "prettier": "^3.3.3"
+  }
+}
